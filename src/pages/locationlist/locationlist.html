@@ -1,0 +1,43 @@
+<!--
+  Generated template for the LocationlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="main">
+    <ion-title><div align="center">หน้าหลัก</div></ion-title>
+  </ion-navbar>
+ <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="ค้นหา"   (ionInput)="filterItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+<!--   item<ion-item><ion-input [(ngModel)]="item"></ion-input></ion-item>
+  address<ion-item><ion-input [(ngModel)]="address"></ion-input></ion-item>
+  <button (click)="btnAddClicked()" ion-button>Add</button> --> 
+
+  <ion-item *ngFor="let item of items; let i = index" (click)="viewitem(item,item.id,uid)" >
+  <ion-card >
+ 
+    <div>
+      <img src="assets/imgs/{{item.img}}"/>
+    </div>
+     <button ion-item >
+    <ion-card-content>
+      <ion-card-title>
+       {{item.nameplace}}
+      </ion-card-title>
+      <p>
+        {{item.address}}
+      </p>
+    </ion-card-content>
+  </button>
+  </ion-card>
+  </ion-item>
+ 
+
+
+</ion-content>

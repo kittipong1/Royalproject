@@ -1,0 +1,54 @@
+<!--
+  Generated template for the AddtripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="main">
+    <ion-title>เพิ่มทริป</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup]="nameForm">
+    <ion-list radio-group formControlName="nametrip">
+
+      <ion-list-header>
+        ชื่อทริป
+      </ion-list-header>
+       <button (click)="docreatnamptrip()" ion-button block color="main">สร้างชื่อทริป</button>
+       <ion-item *ngFor="let item of result" >
+          <ion-label>{{item.tripname}}</ion-label>
+        <ion-radio value="{{item.tripname}}"></ion-radio>
+      </ion-item>
+       
+    </ion-list>
+      <ion-list radio-group formControlName="location">
+
+    <ion-list-header>
+       ลำดับสถานที่
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Location01</ion-label>
+        <ion-radio value="Location01" checked="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Location02</ion-label>
+        <ion-radio value="Location02"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Location03</ion-label>
+        <ion-radio value="Location03"></ion-radio>
+      </ion-item>
+       
+    </ion-list>
+   <button ion-button type="submit" block  (click)="doSubmit($event)">Add </button>
+  </form>
+
+</ion-content>

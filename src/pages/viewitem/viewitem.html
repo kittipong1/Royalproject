@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ViewitemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar color="main">
+    <ion-title>{{details.nameplace}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div>
+		<img src="assets/imgs/{{details.img}}">
+	</div>
+	<button ion-button color="main" (click)="docheckin(uid,id,details.nameplace)">Check In</button><button ion-button light color="main" (click)="doaddtrip(uid,id,lati,long,nickmap,details.nameplace)">Add to my Trip</button><br>
+	 <div id="rating">rating : </div>
+	<br>
+	Vote : 
+	<button ion-button color="danger" (click)="doRadio(uid,id)">
+	  <ion-icon name="star"></ion-icon>
+	  <ion-icon name="star"></ion-icon>
+	  <ion-icon name="star"></ion-icon>
+	  <ion-icon name="star"></ion-icon>
+	  <ion-icon name="star"></ion-icon>
+	</button>
+	<p>
+	{{details.details}}
+	</p>
+	<p>
+	{{details.address}}
+	</p>
+	<p>
+	{{details.phone}}
+	</p>
+	ที่ตั้ง : ละติจูด {{lati}} ลองติจูด {{long}}
+	<div #map id="map"></div>
+</ion-content>
